@@ -1,0 +1,18 @@
+name: AI-ANALYST- 24/7
+on:
+ schedule:
+    - cron: '*/15 * * * *'
+ workflow_dispatch: {}
+jobs:
+ run:
+  runs-on: ubuntu-latest
+  steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+     with:
+      python-version: '3.11'
+      - run: pip install yfinance requests
+      - run: python main.py
+     env:
+      BOT_TOKEN: ${{8987674849:AAERba7x5hCkRKR3bQN7gGIOHl4cZz0zXfQ }}
+      CHAT_ID: ${{8620659526}}
